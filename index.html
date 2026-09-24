@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DT Essay-hjælper – PF1 pilot til Kandidat i IT-didaktisk design." />
+  <title>DT Essay-hjælper – PF1 pilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <button id="homeBtn" class="top-link hidden" type="button">← Forside</button>
+      <div>
+        <div class="brand">DT Essay-hjælper</div>
+        <div class="brand-sub">Digitale Teknologier 2026</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span id="saveStatus" class="save-status">Gemt lokalt</span>
+      <button id="saveVersionTop" class="btn ghost hidden" type="button">Gem version</button>
+      <button id="exportBtn" class="btn accent hidden" type="button">Eksportér Word</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView" class="home-view">
+      <div class="intro-card">
+        <div class="eyebrow">Portfolio · eksamensforløb</div>
+        <h1>Vælg den PF-opgave, du arbejder med</h1>
+        <p>Hver opgave har sin egen arbejdsform. PF1 er pilot og kan åbnes nu. De øvrige kort viser de aftalte rammer og datoer, men bygges først efter evaluering af PF1.</p>
+      </div>
+
+      <div class="pf-grid">
+        <article class="pf-card active-card" data-pf="pf1">
+          <div class="pf-card-top">
+            <span class="pf-number">PF1</span>
+            <span class="status-pill ready">Pilot klar</span>
+          </div>
+          <h2>Teknologi og teknologibrug</h2>
+          <p class="pf-meta">1–2 normalsider · ca. 2.400 tegn pr. side</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>29. september · kl. 12</span></div>
+            <div><strong>Aflevering</strong><span>2. oktober · kl. 12</span></div>
+          </div>
+          <div class="example-box">
+            <strong>Eksempel på mulig opgave – ikke en problemformulering</strong>
+            <p>Hvad kan afholde mennesker fra at tage Docmost i brug?</p>
+          </div>
+          <button class="btn primary open-pf" type="button" data-open="pf1">Åbn PF1</button>
+        </article>
+
+        <article class="pf-card muted-card">
+          <div class="pf-card-top">
+            <span class="pf-number">PF2</span>
+            <span class="status-pill pending">Bygges efter PF1</span>
+          </div>
+          <h2>Fællesskaber og netværk</h2>
+          <p class="pf-meta">3 sider</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>6. oktober · kl. 12</span></div>
+            <div><strong>Ordinær aflevering</strong><span>8. oktober · kl. 12</span></div>
+            <div class="extension"><strong>Udsættelse</strong><span>Ansøgt til 11. oktober</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Mulig case</strong>
+            <p>Ikke valgt endnu.</p>
+          </div>
+        </article>
+
+        <article class="pf-card muted-card">
+          <div class="pf-card-top">
+            <span class="pf-number">PF3</span>
+            <span class="status-pill pending">Bygges senere</span>
+          </div>
+          <h2>Teknologi som kognitiv partner</h2>
+          <p class="pf-meta">5 sider</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>25. november · kl. 12</span></div>
+            <div><strong>Aflevering</strong><span>27. november · kl. 12</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Eksempel på mulig opgave – ikke en problemformulering</strong>
+            <p>Hvordan ændres samspillet med ChatGPT, når arbejdsreglerne ændres fra konsulentassistent til studieassistent?</p>
+          </div>
+        </article>
+
+        <article class="pf-card muted-card">
+          <div class="pf-card-top">
+            <span class="pf-number">PF4</span>
+            <span class="status-pill pending">Bygges senere</span>
+          </div>
+          <h2>Kompetencer i forandring</h2>
+          <p class="pf-meta">2 sider · diskussionsopgave</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>4. december · kl. 12</span></div>
+            <div><strong>Endelig aflevering</strong><span>Ikke oplyst endnu</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Mulig retning</strong>
+            <p>Diskussion af digitale kompetencer med erfaringer fra arbejdet med PF1–PF3 og selve essay-hjælperen som mulig case.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="pf1View" class="workspace hidden">
+      <aside id="feedbackPanel" class="side-panel left-panel collapsed">
+        <button class="panel-toggle" type="button" data-panel="feedbackPanel" aria-label="Åbn eller luk feedbackpanel">Feedback</button>
+        <div class="panel-inner">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Venstre panel</div>
+              <h2>Feedback</h2>
+            </div>
+            <button class="icon-btn collapse-panel" type="button" data-panel="feedbackPanel" title="Luk panel">×</button>
+          </div>
+          <p class="panel-note">Panelet er til PF1-feedback. Systemet hjælper med at forstå feedbacken, men omskriver ikke teksten.</p>
+
+          <label class="file-drop" for="feedbackFile">
+            <input id="feedbackFile" type="file" accept=".docx,.pdf,.txt,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <span class="file-title">Upload feedback</span>
+            <span class="file-help">Word (.docx), PDF eller tekst</span>
+          </label>
+          <div id="feedbackFileStatus" class="micro-status"></div>
+
+          <label class="field-label" for="feedbackRaw">Eller indsæt feedback</label>
+          <textarea id="feedbackRaw" class="panel-textarea" rows="7" placeholder="Indsæt underviserens feedback her …"></textarea>
+
+          <label class="field-label" for="feedbackPoints">Hvad peger feedbacken på?</label>
+          <textarea id="feedbackPoints" class="panel-textarea" rows="4"></textarea>
+
+          <label class="field-label" for="feedbackWhere">Hvor i teksten gælder det?</label>
+          <textarea id="feedbackWhere" class="panel-textarea" rows="3"></textarea>
+
+          <label class="field-label" for="feedbackChange">Hvad vil jeg ændre?</label>
+          <textarea id="feedbackChange" class="panel-textarea" rows="4"></textarea>
+
+          <label class="field-label" for="feedbackWhy">Hvorfor vil jeg ændre det?</label>
+          <textarea id="feedbackWhy" class="panel-textarea" rows="4"></textarea>
+
+          <label class="field-label" for="feedbackStatus">Status</label>
+          <select id="feedbackStatus" class="select-input">
+            <option value="ikke-set">Ikke behandlet</option>
+            <option value="under-arbejde">Under arbejde</option>
+            <option value="justeret">Justeret</option>
+          </select>
+
+          <button id="saveAfterFeedback" class="btn primary full" type="button">Gem version efter feedback</button>
+        </div>
+      </aside>
+
+      <section class="editor-shell">
+        <div class="workspace-header">
+          <div>
+            <div class="eyebrow">PF1 · pilot</div>
+            <h1>Teknologi og teknologibrug</h1>
+            <p>1–2 normalsider · problemformulering, introduktion af metode og analyse.</p>
+          </div>
+          <div class="total-counter">
+            <span id="totalCount">0</span>
+            <span class="counter-divider">/</span>
+            <span>4.800 tegn</span>
+            <small id="totalRemaining">4.800 tilbage</small>
+          </div>
+        </div>
+        <details class="budget-settings">
+          <summary>Justér foreløbig tegnfordeling</summary>
+          <div class="budget-settings-inner">
+            <label>Problemformulering/indledning <input id="budgetInput-problem" type="number" min="100" step="50" value="720"></label>
+            <label>Metode <input id="budgetInput-method" type="number" min="100" step="50" value="960"></label>
+            <label>Analyse <input id="budgetInput-analysis" type="number" min="100" step="50" value="3120"></label>
+            <button id="applyBudgets" class="btn ghost-dark" type="button">Brug fordeling</button>
+            <span id="budgetSettingsNote" class="micro-status">Fordelingen skal samlet være 4.800 tegn.</span>
+          </div>
+        </details>
+
+        <div class="editor-scroll">
+          <section class="writing-section" data-section="problem">
+            <div class="section-title-row">
+              <div>
+                <span class="section-number">01</span>
+                <h2>Problemformulering og kort indledning</h2>
+              </div>
+              <div class="section-counter"><span id="count-problem">0</span> / <span id="budget-problem">720</span></div>
+            </div>
+            <details class="helper-box" open>
+              <summary>Hjælp til at holde undersøgelsen åben</summary>
+              <div class="helper-content">
+                <p class="helper-lead">Det første svar, der dukker op, er ikke nødvendigvis undersøgelsens svar.</p>
+                <div class="helper-columns">
+                  <div><strong>Spørg dig selv</strong><ul><li>Hvad ved jeg faktisk allerede?</li><li>Hvad antager jeg?</li><li>Hvad er det konkret, jeg vil undersøge?</li><li>Kan spørgsmålet besvares gennem det materiale, jeg har eller kan indsamle?</li></ul></div>
+                  <div><strong>Tjek</strong><ul><li>Har jeg formuleret et spørgsmål, der skal undersøges – eller bygget svaret ind i spørgsmålet?</li><li>Er spørgsmålet afgrænset nok til 1–2 sider?</li></ul></div>
+                </div>
+              </div>
+            </details>
+            <textarea id="text-problem" class="writing-area" rows="8" placeholder="Skriv her …"></textarea>
+            <div id="budgetNote-problem" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-section="method">
+            <div class="section-title-row">
+              <div>
+                <span class="section-number">02</span>
+                <h2>Metode</h2>
+              </div>
+              <div class="section-counter"><span id="count-method">0</span> / <span id="budget-method">960</span></div>
+            </div>
+            <details class="helper-box">
+              <summary>Fra konkret beskrivelse til metodisk sprog</summary>
+              <div class="helper-content">
+                <p class="helper-lead">Start med at beskrive, hvad du faktisk gjorde. Metodebegreberne kan komme bagefter.</p>
+                <div class="helper-columns">
+                  <div><strong>Spørg dig selv</strong><ul><li>Hvem eller hvad indgår i undersøgelsen?</li><li>Hvad gjorde jeg konkret?</li><li>Hvordan indsamlede jeg materialet?</li><li>Hvorfor valgte jeg denne fremgangsmåde?</li></ul></div>
+                  <div><strong>Fortsæt med</strong><ul><li>Hvilken type materiale fik jeg ud af den?</li><li>Hvad kan fremgangsmåden sige noget om?</li><li>Hvad kan den ikke sige noget sikkert om?</li><li>Passer metodebegrebet til det, jeg faktisk gjorde?</li></ul></div>
+                </div>
+              </div>
+            </details>
+            <textarea id="text-method" class="writing-area" rows="8" placeholder="Skriv konkret først. Gør metodevalget præcist bagefter …"></textarea>
+            <div id="budgetNote-method" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-section="analysis">
+            <div class="section-title-row">
+              <div>
+                <span class="section-number">03</span>
+                <h2>Analyse</h2>
+              </div>
+              <div class="section-counter"><span id="count-analysis">0</span> / <span id="budget-analysis">3120</span></div>
+            </div>
+            <details class="helper-box">
+              <summary>Broen mellem empiri og teori</summary>
+              <div class="helper-content">
+                <div class="analysis-bridge">
+                  <div><strong>Empiri</strong><span>Hvad kan jeg konkret se i materialet?</span></div>
+                  <div class="bridge-arrow">→</div>
+                  <div><strong>Teori</strong><span>Hvilket begreb hjælper mig med at undersøge det?</span></div>
+                  <div class="bridge-arrow">→</div>
+                  <div><strong>Fortolkning</strong><span>Hvad kan jeg sige, når jeg ser empirien gennem begrebet?</span></div>
+                </div>
+                <div class="helper-columns">
+                  <div><strong>Hvis du fortæller videre</strong><ul><li>Hvad er det præcist i materialet, jeg hæfter mig ved?</li><li>Hvorfor er det relevant for problemformuleringen?</li><li>Hvilket fagligt begreb kan hjælpe mig med at forstå det?</li></ul></div>
+                  <div><strong>Tjek</strong><ul><li>Har jeg belæg i materialet for det, jeg skriver?</li><li>Bruger jeg teorien til at undersøge empirien – eller står den bare ved siden af?</li><li>Er det empirien, der viser dette, eller er det min fortolkning?</li></ul></div>
+                </div>
+              </div>
+            </details>
+            <textarea id="text-analysis" class="writing-area tall" rows="15" placeholder="Skriv analysen her …"></textarea>
+            <div id="budgetNote-analysis" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section references-section">
+            <div class="section-title-row">
+              <div>
+                <span class="section-number">04</span>
+                <h2>Litteraturliste</h2>
+              </div>
+              <div class="section-counter muted">Tæller ikke med i arbejdsfordelingen</div>
+            </div>
+            <textarea id="text-references" class="writing-area" rows="6" placeholder="Skriv litteraturlisten her …"></textarea>
+          </section>
+
+          <section class="tool-section">
+            <div class="tool-head">
+              <div>
+                <div class="eyebrow">Træning</div>
+                <h2>Akademisk sprogtjek</h2>
+              </div>
+              <button id="runLanguageCheck" class="btn primary" type="button">Tjek teksten</button>
+            </div>
+            <p class="tool-note">Tjekket ser efter præcision, begrebsbrug, belæg, sammenhæng, fortælling kontra analyse og unødigt tungt sprog. Det vurderer ikke stavning eller tegnsætning og omskriver ikke din tekst.</p>
+            <div id="languageResults" class="language-results empty-state">Ingen tjek endnu.</div>
+          </section>
+
+          <section class="tool-section process-section">
+            <div class="tool-head">
+              <div>
+                <div class="eyebrow">Dokumentation</div>
+                <h2>Proces og versioner</h2>
+              </div>
+              <button id="saveVersion" class="btn ghost-dark" type="button">Gem version</button>
+            </div>
+            <p class="tool-note">Den aktuelle tekst autosaves i browseren. Versioner gemmer et øjebliksbillede af skrivearbejdet og kommer ikke med i Word-eksporten.</p>
+            <div id="versionList" class="version-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <aside id="theoryPanel" class="side-panel right-panel collapsed">
+        <button class="panel-toggle" type="button" data-panel="theoryPanel" aria-label="Åbn eller luk teoripanel">Teori & kilder</button>
+        <div class="panel-inner">
+          <div class="panel-head">
+            <div>
+              <div class="eyebrow">Højre panel</div>
+              <h2>Teori & kilder</h2>
+            </div>
+            <button class="icon-btn collapse-panel" type="button" data-panel="theoryPanel" title="Luk panel">×</button>
+          </div>
+          <p class="panel-note">Huskenoter er arbejdsnoter. Hold forskel på, hvad kilden dokumenterer, og hvad du selv fortolker.</p>
+          <div id="sourceList" class="source-list"></div>
+          <button id="addSource" class="btn primary full" type="button">+ Tilføj kilde</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.12.3/mammoth.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
