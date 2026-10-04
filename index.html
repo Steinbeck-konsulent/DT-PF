@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DT Essay-hjælper – portfolioarbejde i Digitale Teknologier 2026." />
+  <title>DT Essay-hjælper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-wrap">
+      <button id="homeBtn" class="top-link hidden" type="button">← Forside</button>
+      <div>
+        <div class="brand">DT Essay-hjælper</div>
+        <div class="brand-sub">Digitale Teknologier 2026</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span id="saveStatus" class="save-status">Gemt lokalt</span>
+      <button id="backupBtn" class="btn ghost hidden" type="button">Backup</button>
+      <label id="restoreBackupLabel" class="btn ghost hidden backup-label">Indlæs backup<input id="restoreBackupFile" type="file" accept="application/json,.json"></label>
+      <button id="saveVersionTop" class="btn ghost hidden" type="button">Gem version</button>
+      <button id="exportBtn" class="btn accent hidden" type="button">Eksportér Word</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="homeView" class="home-view">
+      <div class="intro-card">
+        <div class="eyebrow">Portfolio · eksamensforløb</div>
+        <h1>Vælg den PF-opgave, du arbejder med</h1>
+        <p>PF1 bevares som den oprindelige pilot. PF2 er første justerede version efter reel brug og feedback. PF3 og PF4 åbnes først senere.</p>
+      </div>
+
+      <div class="pf-grid">
+        <article class="pf-card active-card" data-pf="pf1">
+          <div class="pf-card-top">
+            <span class="pf-number">PF1</span>
+            <span class="status-pill ready">Pilot · bevaret</span>
+          </div>
+          <h2>Teknologi og teknologibrug</h2>
+          <p class="pf-meta">1–2 normalsider · ca. 2.400 tegn pr. side</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>29. september · kl. 12</span></div>
+            <div><strong>Aflevering</strong><span>2. oktober · kl. 12</span></div>
+          </div>
+          <div class="example-box">
+            <strong>Eksempel på mulig opgave – ikke en problemformulering</strong>
+            <p>Hvad kan afholde mennesker fra at tage Docmost i brug?</p>
+          </div>
+          <button class="btn primary open-pf" type="button" data-open="pf1">Åbn PF1</button>
+        </article>
+
+        <article class="pf-card active-card pf2-card" data-pf="pf2">
+          <div class="pf-card-top">
+            <span class="pf-number">PF2</span>
+            <span class="status-pill ready">Åben</span>
+          </div>
+          <h2>Fællesskaber og netværk</h2>
+          <p class="pf-meta">3 normalsider · ca. 7.200 tegn</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>6. oktober · kl. 12</span></div>
+            <div><strong>Ordinær aflevering</strong><span>8. oktober · kl. 12</span></div>
+            <div class="extension"><strong>Udsættelse</strong><span>Ansøgt til 11. oktober</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Case</strong>
+            <p>Vælges ud fra konkrete sociale interaktioner med tovejskommunikation/dialog.</p>
+          </div>
+          <button class="btn primary open-pf" type="button" data-open="pf2">Åbn PF2</button>
+        </article>
+
+        <article class="pf-card muted-card locked-card">
+          <div class="pf-card-top">
+            <span class="pf-number">PF3</span>
+            <span class="status-pill pending">Låst</span>
+          </div>
+          <h2>Teknologi som kognitiv partner</h2>
+          <p class="pf-meta">5 sider</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>25. november · kl. 12</span></div>
+            <div><strong>Aflevering</strong><span>27. november · kl. 12</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Åbnes senere</strong>
+            <p>PF3 bygges først, når PF2 er afprøvet og evalueret.</p>
+          </div>
+        </article>
+
+        <article class="pf-card muted-card locked-card">
+          <div class="pf-card-top">
+            <span class="pf-number">PF4</span>
+            <span class="status-pill pending">Låst</span>
+          </div>
+          <h2>Kompetencer i forandring</h2>
+          <p class="pf-meta">2 sider · diskussionsopgave</p>
+          <div class="dates">
+            <div><strong>Udkast</strong><span>4. december · kl. 12</span></div>
+            <div><strong>Endelig aflevering</strong><span>Ikke oplyst endnu</span></div>
+          </div>
+          <div class="example-box neutral">
+            <strong>Åbnes senere</strong>
+            <p>PF4 bygges først efter evaluering af de foregående versioner.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PF1: bevaret som pilot -->
+    <section id="pf1View" class="workspace hidden">
+      <aside id="feedbackPanel" class="side-panel left-panel collapsed">
+        <button class="panel-toggle" type="button" data-panel="feedbackPanel" aria-label="Åbn eller luk feedbackpanel">Feedback</button>
+        <div class="panel-inner">
+          <div class="panel-head">
+            <div><div class="eyebrow">Venstre panel</div><h2>Feedback</h2></div>
+            <button class="icon-btn collapse-panel" type="button" data-panel="feedbackPanel" title="Luk panel">×</button>
+          </div>
+          <p class="panel-note">Panelet er til PF1-feedback. Systemet hjælper med at forstå feedbacken, men omskriver ikke teksten.</p>
+          <label class="file-drop" for="feedbackFile">
+            <input id="feedbackFile" type="file" accept=".docx,.pdf,.txt,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <span class="file-title">Upload feedback</span>
+            <span class="file-help">Word (.docx), PDF eller tekst</span>
+          </label>
+          <div id="feedbackFileStatus" class="micro-status"></div>
+          <label class="field-label" for="feedbackRaw">Eller indsæt feedback</label>
+          <textarea id="feedbackRaw" class="panel-textarea" rows="7" placeholder="Indsæt underviserens feedback her …"></textarea>
+          <label class="field-label" for="feedbackPoints">Hvad peger feedbacken på?</label>
+          <textarea id="feedbackPoints" class="panel-textarea" rows="4"></textarea>
+          <label class="field-label" for="feedbackWhere">Hvor i teksten gælder det?</label>
+          <textarea id="feedbackWhere" class="panel-textarea" rows="3"></textarea>
+          <label class="field-label" for="feedbackChange">Hvad vil jeg ændre?</label>
+          <textarea id="feedbackChange" class="panel-textarea" rows="4"></textarea>
+          <label class="field-label" for="feedbackWhy">Hvorfor vil jeg ændre det?</label>
+          <textarea id="feedbackWhy" class="panel-textarea" rows="4"></textarea>
+          <label class="field-label" for="feedbackStatus">Status</label>
+          <select id="feedbackStatus" class="select-input">
+            <option value="ikke-set">Ikke behandlet</option>
+            <option value="under-arbejde">Under arbejde</option>
+            <option value="justeret">Justeret</option>
+          </select>
+          <button id="saveAfterFeedback" class="btn primary full" type="button">Gem version efter feedback</button>
+        </div>
+      </aside>
+
+      <section class="editor-shell">
+        <div class="workspace-header">
+          <div>
+            <div class="eyebrow">PF1 · pilot</div>
+            <h1>Teknologi og teknologibrug</h1>
+            <p>1–2 normalsider · problemformulering, introduktion af metode og analyse.</p>
+          </div>
+          <div class="total-counter"><span id="totalCount">0</span><span class="counter-divider">/</span><span>4.800 tegn</span><small id="totalRemaining">4.800 tilbage</small></div>
+        </div>
+        <details class="budget-settings">
+          <summary>Justér foreløbig tegnfordeling</summary>
+          <div class="budget-settings-inner">
+            <label>Problemformulering/indledning <input id="budgetInput-problem" type="number" min="100" step="50" value="720"></label>
+            <label>Metode <input id="budgetInput-method" type="number" min="100" step="50" value="960"></label>
+            <label>Analyse <input id="budgetInput-analysis" type="number" min="100" step="50" value="3120"></label>
+            <button id="applyBudgets" class="btn ghost-dark" type="button">Brug fordeling</button>
+            <span id="budgetSettingsNote" class="micro-status">Fordelingen skal samlet være 4.800 tegn.</span>
+          </div>
+        </details>
+        <div class="editor-scroll">
+          <section class="writing-section" data-section="problem">
+            <div class="section-title-row"><div><span class="section-number">01</span><h2>Problemformulering og kort indledning</h2></div><div class="section-counter"><span id="count-problem">0</span> / <span id="budget-problem">720</span></div></div>
+            <details class="helper-box" open>
+              <summary>Opgavekrav + hjælp til problemformuleringen</summary>
+              <div class="helper-content">
+                <p class="helper-lead"><strong>Opgaven kræver:</strong> Tag udgangspunkt i en konkret teknologi i en studierelateret læringspraksis, og formulér en vinkel eller problemstilling, som gør den konkrete teknologibrug undersøgelig.</p>
+                <p><strong>Hold fast i:</strong> Det skal være tydeligt, hvilken teknologi du undersøger, hvilken praksis den indgår i, og hvad du vil undersøge ved brugen.</p>
+                <p class="helper-lead">Det første svar, der dukker op, er ikke nødvendigvis undersøgelsens svar.</p>
+                <div class="helper-columns"><div><strong>Spørg dig selv</strong><ul><li>Hvad ved jeg faktisk allerede?</li><li>Hvad antager jeg?</li><li>Hvad er det konkret, jeg vil undersøge?</li><li>Kan spørgsmålet besvares gennem det materiale, jeg har eller kan indsamle?</li></ul></div><div><strong>Tjek</strong><ul><li>Har jeg formuleret et spørgsmål, der skal undersøges – eller bygget svaret ind i spørgsmålet?</li><li>Er spørgsmålet afgrænset nok til 1–2 sider?</li></ul></div></div>
+              </div>
+            </details>
+            <textarea id="text-problem" class="writing-area" rows="8" placeholder="Skriv her …"></textarea><div id="budgetNote-problem" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-section="method">
+            <div class="section-title-row"><div><span class="section-number">02</span><h2>Metode</h2></div><div class="section-counter"><span id="count-method">0</span> / <span id="budget-method">960</span></div></div>
+            <details class="helper-box"><summary>Opgavekrav + hjælp til metode</summary><div class="helper-content"><p class="helper-lead"><strong>Opgaven kræver:</strong> Introducér kort den metode, du bruger til at undersøge den konkrete teknologibrug og de relevante interaktioner.</p><p><strong>Hold fast i:</strong> Metoden skal passe til det materiale, du faktisk indsamler eller undersøger. Bilag kan bruges til fx screendumps eller uddrag af empiri, hvis det er relevant.</p><p class="helper-lead">Start med at beskrive, hvad du faktisk gjorde. Metodebegreberne kan komme bagefter.</p><div class="helper-columns"><div><strong>Spørg dig selv</strong><ul><li>Hvem eller hvad indgår i undersøgelsen?</li><li>Hvad gjorde jeg konkret?</li><li>Hvordan indsamlede jeg materialet?</li><li>Hvorfor valgte jeg denne fremgangsmåde?</li></ul></div><div><strong>Fortsæt med</strong><ul><li>Hvilken type materiale fik jeg ud af den?</li><li>Hvad kan fremgangsmåden sige noget om?</li><li>Hvad kan den ikke sige noget sikkert om?</li><li>Passer metodebegrebet til det, jeg faktisk gjorde?</li></ul></div></div></div></details>
+            <textarea id="text-method" class="writing-area" rows="8" placeholder="Skriv konkret først. Gør metodevalget præcist bagefter …"></textarea><div id="budgetNote-method" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-section="analysis">
+            <div class="section-title-row"><div><span class="section-number">03</span><h2>Analyse</h2></div><div class="section-counter"><span id="count-analysis">0</span> / <span id="budget-analysis">3120</span></div></div>
+            <details class="helper-box" open><summary>Opgavekrav + broen mellem empiri og teori</summary><div class="helper-content"><p class="helper-lead"><strong>Opgaven kræver:</strong> Analysér den konkrete brug af teknologien – ikke kun teknologien som ting. Undersøg interaktion med teknologien og/eller andre brugere, og brug relevante begreber om teknologi og teknologibrug.</p><p><strong>Hold fast i:</strong> Undgå at gøre teknologien til en automatisk årsag til menneskers handlinger. Se i stedet på, hvilke muligheder teknologien tilbyder, og hvordan de faktisk tages i brug i praksis.</p><div class="analysis-bridge"><div><strong>Empiri</strong><span>Hvad kan jeg konkret se i materialet?</span></div><div class="bridge-arrow">→</div><div><strong>Teori</strong><span>Hvilket begreb hjælper mig med at undersøge det?</span></div><div class="bridge-arrow">→</div><div><strong>Fortolkning</strong><span>Hvad kan jeg sige, når jeg ser empirien gennem begrebet?</span></div></div><div class="helper-columns"><div><strong>Hvis du fortæller videre</strong><ul><li>Hvad er det præcist i materialet, jeg hæfter mig ved?</li><li>Hvorfor er det relevant for problemformuleringen?</li><li>Hvilket fagligt begreb kan hjælpe mig med at forstå det?</li></ul></div><div><strong>Tjek</strong><ul><li>Har jeg belæg i materialet for det, jeg skriver?</li><li>Bruger jeg teorien til at undersøge empirien – eller står den bare ved siden af?</li><li>Er det empirien, der viser dette, eller er det min fortolkning?</li></ul></div></div></div></details>
+            <textarea id="text-analysis" class="writing-area tall" rows="15" placeholder="Skriv analysen her …"></textarea><div id="budgetNote-analysis" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section references-section"><div class="section-title-row"><div><span class="section-number">04</span><h2>Litteraturliste</h2></div><div class="section-counter muted">Tæller ikke med i arbejdsfordelingen</div></div><details class="helper-box"><summary>Opgavekrav til litteratur</summary><div class="helper-content"><p class="helper-lead"><strong>Opgaven kræver:</strong> Medtag en litteraturliste over de kilder, du faktisk bruger i opgaven.</p><p><strong>Hold fast i:</strong> Kursuslitteratur er ikke automatisk et krav om at bruge alle tekster. Vælg de begreber og kilder, der er relevante for den konkrete analyse.</p></div></details><textarea id="text-references" class="writing-area" rows="6" placeholder="Skriv litteraturlisten her …"></textarea></section>
+
+          <section class="tool-section"><div class="tool-head"><div><div class="eyebrow">Træning</div><h2>Akademisk sprogtjek</h2></div><button id="runLanguageCheck" class="btn primary" type="button">Tjek teksten</button></div><p class="tool-note">Tjekket ser efter præcision, begrebsbrug, belæg, sammenhæng, fortælling kontra analyse og unødigt tungt sprog. Det vurderer ikke stavning eller tegnsætning og omskriver ikke din tekst.</p><div id="languageResults" class="language-results empty-state">Ingen tjek endnu.</div></section>
+          <section class="tool-section process-section"><div class="tool-head"><div><div class="eyebrow">Dokumentation</div><h2>Proces og versioner</h2></div><button id="saveVersion" class="btn ghost-dark" type="button">Gem version</button></div><p class="tool-note">Den aktuelle tekst autosaves i browseren. Versioner gemmer et øjebliksbillede af skrivearbejdet og kommer ikke med i Word-eksporten.</p><div id="versionList" class="version-list"></div></section>
+        </div>
+      </section>
+
+      <aside id="theoryPanel" class="side-panel right-panel collapsed"><button class="panel-toggle" type="button" data-panel="theoryPanel" aria-label="Åbn eller luk teoripanel">Teori & kilder</button><div class="panel-inner"><div class="panel-head"><div><div class="eyebrow">Højre panel</div><h2>Teori & kilder</h2></div><button class="icon-btn collapse-panel" type="button" data-panel="theoryPanel" title="Luk panel">×</button></div><p class="panel-note">Huskenoter er arbejdsnoter. Hold forskel på, hvad kilden dokumenterer, og hvad du selv fortolker.</p><div id="sourceList" class="source-list"></div><button id="addSource" class="btn primary full" type="button">+ Tilføj kilde</button></div></aside>
+    </section>
+
+    <!-- PF2: første justerede version -->
+    <section id="pf2View" class="workspace hidden">
+      <aside id="pf2FeedbackPanel" class="side-panel left-panel collapsed">
+        <button class="panel-toggle" type="button" data-panel="pf2FeedbackPanel" aria-label="Åbn eller luk feedbackpanel">Feedback</button>
+        <div class="panel-inner">
+          <div class="panel-head"><div><div class="eyebrow">PF2 · kontekstuel feedback</div><h2>Kommentarer</h2></div><button class="icon-btn collapse-panel" type="button" data-panel="pf2FeedbackPanel">×</button></div>
+          <p class="panel-note">Markér et tekststykke i en PF2-skriveblok. Kommentaren gemmes sammen med den markerede passage. Værktøjet foreslår ikke en løsning.</p>
+          <div class="selection-box"><strong>Aktuel markering</strong><div id="pf2SelectionPreview">Ingen markering endnu.</div></div>
+          <label class="field-label" for="pf2CommentInput">Kommentar til markeringen</label>
+          <textarea id="pf2CommentInput" class="panel-textarea" rows="5" placeholder="Indsæt fx underviserens kommentar …"></textarea>
+          <button id="pf2AddComment" class="btn primary full" type="button">Gem kommentar til markering</button>
+          <div class="panel-divider"></div>
+          <div id="pf2CommentList" class="comment-list"></div>
+        </div>
+      </aside>
+
+      <section class="editor-shell">
+        <div class="workspace-header">
+          <div><div class="eyebrow">PF2 · version 1 efter PF1</div><h1>Fællesskaber og netværk</h1><p>3 normalsider · sociale interaktioner, metode, begreber og analyse.</p></div>
+          <div class="total-counter pf2-total"><strong id="pf2TotalWords">0 ord</strong><span id="pf2TotalChars">0 / 7.200 tegn</span><small id="pf2Remaining">7.200 tilbage</small></div>
+        </div>
+        <details class="budget-settings"><summary>Justér foreløbig tegnfordeling</summary><div class="budget-settings-inner">
+          <label>Indledning/problem <input id="pf2BudgetInput-problem" type="number" min="100" step="50" value="900"></label>
+          <label>Metode/empiri <input id="pf2BudgetInput-method" type="number" min="100" step="50" value="1300"></label>
+          <label>Begreber/teori <input id="pf2BudgetInput-theory" type="number" min="100" step="50" value="800"></label>
+          <label>Analyse <input id="pf2BudgetInput-analysis" type="number" min="100" step="50" value="3500"></label>
+          <label>Fremtidigt arbejde <input id="pf2BudgetInput-future" type="number" min="100" step="50" value="700"></label>
+          <button id="pf2ApplyBudgets" class="btn ghost-dark" type="button">Brug fordeling</button><span id="pf2BudgetSettingsNote" class="micro-status">Fordelingen skal samlet være 7.200 tegn.</span>
+        </div></details>
+
+        <div class="editor-scroll">
+          <section class="writing-section" data-pf2-section="problem">
+            <div class="section-title-row"><div><span class="section-number">01</span><h2>Titel, indledning og problemformulering</h2></div><div class="section-counter"><span id="pf2CountWords-problem">0 ord</span> · <span id="pf2Count-problem">0</span> / <span id="pf2Budget-problem">900</span> tegn</div></div>
+            <details class="helper-box" open><summary>Opgavekrav + erfaring fra PF1</summary><div class="helper-content">
+              <p class="helper-lead"><strong>PF2 kræver:</strong> Afgræns en konkret case med sociale interaktioner, hvor der er elementer af tovejskommunikation eller dialog. Problemformuleringen skal kunne undersøges gennem den empiri, du faktisk har.</p>
+              <p><strong>Fra PF1:</strong> Hold metode og teori ude af problemformuleringen. Problemformuleringen skal handle om det fænomen eller den praksis, du undersøger.</p>
+              <div class="helper-columns"><div><strong>Tjek af afgrænsning</strong><ul><li>Er casen konkret nok til tre sider?</li><li>Er der faktisk interaktion mellem mennesker?</li><li>Kan spørgsmålet besvares med det materiale, du har?</li></ul></div><div><strong>Pas på</strong><ul><li>At bygge svaret ind i spørgsmålet.</li><li>At gøre mediet til en automatisk årsag.</li><li>At formulere et før/efter-spørgsmål uden før/efter-empiri.</li></ul></div></div>
+            </div></details>
+            <textarea id="pf2-text-problem" class="writing-area pf2-writing" data-pf2-key="problem" rows="8" placeholder="Skriv her …"></textarea><div id="pf2BudgetNote-problem" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-pf2-section="method">
+            <div class="section-title-row"><div><span class="section-number">02</span><h2>Metode og empirisk materiale</h2></div><div class="section-counter"><span id="pf2CountWords-method">0 ord</span> · <span id="pf2Count-method">0</span> / <span id="pf2Budget-method">1300</span> tegn</div></div>
+            <details class="helper-box"><summary>Opgavekrav + erfaring fra PF1</summary><div class="helper-content">
+              <p class="helper-lead"><strong>PF2 kræver:</strong> Beskriv kort, hvordan du har indsamlet og afgrænset dit empiriske materiale, og begrund hvorfor metoden passer til problemstillingen.</p>
+              <p><strong>Fra PF1:</strong> Fortsæt med den konkrete beskrivelse af det metodiske arbejde. Gør valg og fravalg synlige.</p>
+              <div class="helper-columns"><div><strong>Beskriv konkret</strong><ul><li>Hvad er casen?</li><li>Hvilke interaktioner indgår?</li><li>Hvordan blev materialet indsamlet?</li><li>Over hvilken periode?</li></ul></div><div><strong>Afgræns</strong><ul><li>Hvad har du valgt fra?</li><li>Hvad kan materialet sige noget om?</li><li>Hvad kan det ikke sige sikkert?</li><li>Kræver materialet anonymisering eller anden etisk hensyntagen?</li></ul></div></div>
+            </div></details>
+            <textarea id="pf2-text-method" class="writing-area pf2-writing" data-pf2-key="method" rows="9" placeholder="Beskriv først hvad du faktisk gjorde …"></textarea><div id="pf2BudgetNote-method" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-pf2-section="theory">
+            <div class="section-title-row"><div><span class="section-number">03</span><h2>Analysebegreber / teori</h2></div><div class="section-counter"><span id="pf2CountWords-theory">0 ord</span> · <span id="pf2Count-theory">0</span> / <span id="pf2Budget-theory">800</span> tegn</div></div>
+            <details class="helper-box"><summary>Opgavekrav + erfaring fra PF1</summary><div class="helper-content">
+              <p class="helper-lead"><strong>PF2 kræver:</strong> Brug de begreber, der er relevante for at undersøge casens sociale interaktioner, mediets rolle og træk af fællesskab eller netværk.</p>
+              <p><strong>Fra PF1:</strong> Forklar kort, hvorfor netop disse begreber er relevante. Begreberne retter dit blik mod noget bestemt og afgrænser samtidig, hvad du ser.</p>
+              <p><strong>Hold fast i:</strong> Begreberne er analytiske redskaber. Dette er ikke et litteraturreferat.</p>
+            </div></details>
+            <textarea id="pf2-text-theory" class="writing-area pf2-writing" data-pf2-key="theory" rows="7" placeholder="Skriv kun det, der skal bruges analytisk …"></textarea><div id="pf2BudgetNote-theory" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-pf2-section="analysis">
+            <div class="section-title-row"><div><span class="section-number">04</span><h2>Analyse</h2></div><div class="section-counter"><span id="pf2CountWords-analysis">0 ord</span> · <span id="pf2Count-analysis">0</span> / <span id="pf2Budget-analysis">3500</span> tegn</div></div>
+            <details class="helper-box" open><summary>Opgavekrav + analysebro</summary><div class="helper-content">
+              <p class="helper-lead"><strong>PF2 kræver:</strong> Analysér de konkrete sociale interaktioner og undersøg, hvilken rolle mediet spiller. Undersøg samtidig, hvilke træk af fællesskab, community eller netværk der kan identificeres i casen.</p>
+              <div class="analysis-bridge"><div><strong>Empiri</strong><span>Hvad kan jeg konkret se?</span></div><div class="bridge-arrow">→</div><div><strong>Begreb</strong><span>Hvilket begreb gør noget analytisk her?</span></div><div class="bridge-arrow">→</div><div><strong>Fortolkning</strong><span>Hvad bliver synligt gennem koblingen?</span></div></div>
+              <div class="helper-columns"><div><strong>Hold analysen tæt på materialet</strong><ul><li>Vis konkrete beskeder, handlinger, mønstre eller screenshots.</li><li>Karakterisér frem for at rangordne.</li><li>Skeln mellem det materialet viser, og din fortolkning.</li></ul></div><div><strong>Tjek mediets rolle</strong><ul><li>Hvad muliggør eller begrænser mediet i den konkrete interaktion?</li><li>Hvilke relationer eller forbindelser bliver synlige?</li><li>Er “community” eller “netværk” faktisk båret af empiri og begreber?</li></ul></div></div>
+            </div></details>
+            <textarea id="pf2-text-analysis" class="writing-area tall pf2-writing" data-pf2-key="analysis" rows="16" placeholder="Skriv analysen her …"></textarea><div id="pf2BudgetNote-analysis" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section" data-pf2-section="future">
+            <div class="section-title-row"><div><span class="section-number">05</span><h2>Fremtidigt arbejde</h2></div><div class="section-counter"><span id="pf2CountWords-future">0 ord</span> · <span id="pf2Count-future">0</span> / <span id="pf2Budget-future">700</span> tegn</div></div>
+            <details class="helper-box"><summary>Hvad hører til her?</summary><div class="helper-content"><p class="helper-lead"><strong>Hold det kort:</strong> Peg på hvad en videre undersøgelse kunne belyse, som denne korte opgave ikke kan.</p><p>Det er ikke stedet for en ny analyse eller for at introducere et helt nyt emne.</p></div></details>
+            <textarea id="pf2-text-future" class="writing-area pf2-writing" data-pf2-key="future" rows="5" placeholder="Skriv kort …"></textarea><div id="pf2BudgetNote-future" class="budget-note"></div>
+          </section>
+
+          <section class="writing-section references-section"><div class="section-title-row"><div><span class="section-number">06</span><h2>Litteraturliste</h2></div><div class="section-counter muted">Tæller ikke med i arbejdsfordelingen</div></div><textarea id="pf2-text-references" class="writing-area pf2-writing" data-pf2-key="references" rows="6" placeholder="Skriv litteraturlisten her …"></textarea></section>
+
+          <section class="tool-section academic-check-strong"><div class="tool-head"><div><div class="eyebrow">Diagnose · ikke løsning</div><h2>Akademisk vurdering</h2></div><button id="pf2RunAcademicCheck" class="btn primary" type="button">Udfordr teksten</button></div><p class="tool-note">Vurderingen peger kun på faglige problemer og svage steder. Den foreslår ikke en omskrivning og fortæller ikke, hvordan du skal løse problemet. Stavning og tegnsætning vurderes ikke.</p><div id="pf2AcademicResults" class="language-results empty-state">Ingen vurdering endnu.</div></section>
+
+          <section class="tool-section process-section"><div class="tool-head"><div><div class="eyebrow">Dokumentation</div><h2>Proces og versioner</h2></div><button id="pf2SaveVersion" class="btn ghost-dark" type="button">Gem version</button></div><p class="tool-note">PF2 gemmes separat fra PF1. Brug backup-funktionen i topbjælken, hvis du vil sikre arbejdet uden for browserens lokale lager.</p><div id="pf2VersionList" class="version-list"></div></section>
+        </div>
+      </section>
+
+      <aside id="pf2TheoryPanel" class="side-panel right-panel collapsed">
+        <button class="panel-toggle" type="button" data-panel="pf2TheoryPanel" aria-label="Åbn eller luk teoripanel">Teori & kilder</button>
+        <div class="panel-inner"><div class="panel-head"><div><div class="eyebrow">PF2 · arbejdsnoter</div><h2>Teori & kilder</h2></div><button class="icon-btn collapse-panel" type="button" data-panel="pf2TheoryPanel">×</button></div><p class="panel-note">Behold kun det, der hjælper analysen. Skeln mellem hvad kilden siger, og hvad du selv fortolker.</p><div id="pf2SourceList" class="source-list"></div><button id="pf2AddSource" class="btn primary full" type="button">+ Tilføj kilde</button></div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.12.3/mammoth.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
